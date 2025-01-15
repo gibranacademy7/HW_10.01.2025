@@ -63,31 +63,24 @@ class CustomerDatabase:
         self.connection.close()
 
 
-# Example usage:
 
-# Initialize the database and customer operations
 db = CustomerDatabase()
 
-# Insert new customers
 db.insert_customer('Wisam', 'Gibran', '5 Almog st. Nof Hagalil', '054-7407016')
 db.insert_customer('Hanan', 'Assad', 'Mutran 99 Nazareth', '052-2039486')
 db.insert_customer('Rama', 'Hanna', 'Ben Goryon 8 Haifa', '054-3243546')
 db.insert_customer('Arwa', 'Malak', 'Zion 22 Jerusalem', '054-8768576')
 db.insert_customer('Moshe', 'Cohen', '33 Curcom st. Reine', '052-3645675')
 
-# Retrieve all customers
 all_customers = db.get_all_customers()
 
-# Print all customers
 for customer in all_customers:
     print(customer)
 
-# Testing equality and hash
 print(all_customers[0])
 print(repr(all_customers[1]))
 print(all_customers[0] == all_customers[4])  # Checking if first and fifth customer are the same
 
 print(f'hash of customer 1: {hash(all_customers[0])}, hash of customer 5: {hash(all_customers[4])}')
 
-# Close the database connection
 db.close_connection()
